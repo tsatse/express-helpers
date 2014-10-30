@@ -28,7 +28,6 @@ function renderAndSend(templatePath, requestParams) {
       var params = {};
       params = _merge(params, request.params);
       params = _merge(params, reqParams);
-      params = _merge(params, request);
       response.render(templatePath, params, function(error, renderedView) {
         if(error) {
           log.error('http', error);
