@@ -45,6 +45,15 @@ function renderAndSend(templatePath, requestParams) {
   };
 }
 
+function promiseThenNext(promise, resultName) {
+  return function(request, response, next) {
+    promise.then(function(result) {
+      request[resultName] = result;
+      next();
+    });
+  }
+}
+
 function redirect(targetPath) {
   return function(request, response, next) {
     response.redirect(targetPath);
@@ -57,5 +66,6 @@ function responseOk(request, response, next) {
 
 exports.renderAndSend = renderAndSend;
 exports.simpleLogger = simpleLogger;
+exports.promiseThenNext = promiseThenNext;
 exports.redirect = redirect;
 exports.responseOk = responseOk;
