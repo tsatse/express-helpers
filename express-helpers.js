@@ -61,7 +61,7 @@ function redirect(targetPath) {
 }
 
 function responseOk(request, response, next) {
-  response.send(200);
+  response.sendStatus(200);
 }
 
 exports.renderAndSend = renderAndSend;
