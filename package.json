@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {},
   "repository": "https://github.com/tsatse/express-helpers.git",
   "author": "TSA TSE",
   "license": "BSD"

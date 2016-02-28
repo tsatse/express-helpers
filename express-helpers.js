@@ -19,6 +19,7 @@ function _merge(obj1, obj2) {
 
 function simpleLogger(request, response, next) {
     log.verbose('http', '%s %s', request.method, request.url);
+    log.verbose('http', 'route %s', request.route.path);
     next();
 }
 
